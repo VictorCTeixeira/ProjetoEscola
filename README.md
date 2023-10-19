@@ -13,13 +13,5 @@ Igor Matheus de Souza:
 
 ```
 
-import javax.swing.*;
+ <img src="https://user-images.githubusercontent.com/105131652/186226747-206a5cb6-0390-445f-9ab7-aaa88827750e.jpg" width="200" />
 
-public class GraphicButtonPanel extends JPanel {
-
-    GraphicButtonPanel() {
-        Icon tigerIcon = new ImageIcon("SmallTiger.gif");
-        JButton myButton = new JButton("Tiger", tigerIcon);
-        add(myButton);
-    }
-}
