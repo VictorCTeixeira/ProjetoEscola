@@ -9,7 +9,7 @@ Projeto para o controle de entregas e notas dos alunos de diversas disciplinas.
 Daniel Souza Pires:
 Victor Conceição Teixeira:
 Diogo Allem Molina:
-Igor Matheus de Souza:
+Igor Matheus de Souza Sampaio:
 
 ```
 # ☕
