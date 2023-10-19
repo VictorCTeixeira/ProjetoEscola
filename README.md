@@ -13,5 +13,5 @@ Igor Matheus de Souza:
 
 ```
 
- <img src="https://brandslogos.com/j/java-logo-1" width="200" />
+ <https://brandslogos.com/wp-content/uploads/images/large/java-logo-1.png" />
 
