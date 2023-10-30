@@ -1,4 +1,4 @@
-package poo.projeto.dominio.FakeDB;
+package poo.projeto.FakeDB;
 import java.util.ArrayList;
 
 public abstract class BaseGenericaFakeDB<Tdom> {

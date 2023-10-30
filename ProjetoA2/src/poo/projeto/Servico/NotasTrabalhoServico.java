@@ -1,9 +1,9 @@
-package poo.projeto.dominio.Servico;
+package poo.projeto.Servico;
 
 import java.util.ArrayList;
 
 import poo.projeto.dominio.NotaTrabalho;
-import poo.projeto.dominio.Repositorio.NotasTrabalhoRepositorio;
+import poo.projeto.Repositorio.NotasTrabalhoRepositorio;
 
 public class NotasTrabalhoServico extends BaseGenericaServico<NotasTrabalhoRepositorio, NotaTrabalho> {
 

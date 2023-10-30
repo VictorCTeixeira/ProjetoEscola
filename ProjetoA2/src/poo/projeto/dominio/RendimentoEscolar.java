@@ -5,7 +5,7 @@ public class RendimentoEscolar extends BaseObjetoAluno{
     private Turma turma;
     private double nota1Prova;
     private double nota2Prova;
-    private ArrayList<NotaTrabalho> Notastrabalhos; 
+    private ArrayList<NotaTrabalho> trabalhos; 
     private double mediaTrabalhos;
     private double mediaGeral;
     public Turma getTurma() {
@@ -27,10 +27,10 @@ public class RendimentoEscolar extends BaseObjetoAluno{
         this.nota2Prova = nota2Prova;
     }
     public ArrayList<NotaTrabalho> getTrabalhos() {
-        return Notastrabalhos;
+        return trabalhos;
     }
     public void setTrabalhos(ArrayList<NotaTrabalho> Notastrabalhos) {
-        this.Notastrabalhos = Notastrabalhos;
+        this.trabalhos = Notastrabalhos;
     }
     public double getMediaTrabalhos() {
         return mediaTrabalhos;
@@ -47,20 +47,34 @@ public class RendimentoEscolar extends BaseObjetoAluno{
     public RendimentoEscolar() {
     }
     public RendimentoEscolar(int codigo, Aluno aluno, Turma turma, double nota1Prova, double nota2Prova,
-            ArrayList<NotaTrabalho> Notastrabalhos, double mediaTrabalhos, double mediaGeral) {
+            ArrayList<NotaTrabalho> Notastrabalhos) {
         super(codigo, aluno);
         this.turma = new Turma();
         this.nota1Prova = nota1Prova;
         this.nota2Prova = nota2Prova;
-        this.Notastrabalhos = new ArrayList<NotaTrabalho>();
-        this.mediaTrabalhos = mediaTrabalhos;
-        this.mediaGeral = mediaGeral;
+        this.trabalhos = new ArrayList<NotaTrabalho>();
+        this.mediaTrabalhos = this.CalcularMediaTrabalho();
+        this.mediaGeral = this.CalcularMediaGeral();
     }
     @Override
     public String toString() {
         return "RendimentoEscolar [codigo = "+ codigo + "aluno = "+ aluno + "turma=" + turma + ", nota1Prova=" + nota1Prova + ", nota2Prova=" + nota2Prova
-                + ", Notastrabalhos=" + Notastrabalhos + ", mediaTrabalhos=" + mediaTrabalhos + ", mediaGeral="
+                + ", Notastrabalhos=" + trabalhos + ", mediaTrabalhos=" + mediaTrabalhos + ", mediaGeral="
                 + mediaGeral + "]";
+    }
+
+    public double CalcularMediaTrabalho(){
+        double somaTotal = 0;
+        for(NotaTrabalho t1 : trabalhos){
+            somaTotal += t1.getNota();
+        }
+        double mediaTotal = somaTotal/4;
+        return mediaTotal;
+    }
+
+    public double CalcularMediaGeral(){
+        double MediaGeral = (mediaTrabalhos + nota1Prova + nota2Prova)/3;
+        return MediaGeral;
     }
     
 }

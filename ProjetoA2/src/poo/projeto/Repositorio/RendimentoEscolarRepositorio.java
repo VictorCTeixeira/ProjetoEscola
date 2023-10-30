@@ -1,7 +1,7 @@
-package poo.projeto.dominio.Repositorio;
+package poo.projeto.Repositorio;
 
 import poo.projeto.dominio.RendimentoEscolar;
-import poo.projeto.dominio.FakeDB.RendimentoEscolarFakeDB;
+import poo.projeto.FakeDB.RendimentoEscolarFakeDB;
 
 public class RendimentoEscolarRepositorio extends BaseGenericaCRUD<RendimentoEscolarFakeDB, RendimentoEscolar> {
 

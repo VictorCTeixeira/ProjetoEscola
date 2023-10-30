@@ -20,9 +20,6 @@ public class Disciplina extends BaseDadosComuns{
     public String toString() {
         return "Disciplina [codigo = "+ codigo + "nome = "+ nome +"ementa=" + ementa + "]";
     }
-
-    public void ListarDisciplina() {
-        System.out.println();
-    }
+    
     
 }

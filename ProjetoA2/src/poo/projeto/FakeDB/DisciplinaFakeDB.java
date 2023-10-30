@@ -1,4 +1,4 @@
-package poo.projeto.dominio.FakeDB;
+package poo.projeto.FakeDB;
 import poo.projeto.dominio.*;
 
 public class DisciplinaFakeDB extends BaseGenericaFakeDB<Disciplina>{

@@ -1,11 +1,11 @@
 package poo.projeto.dominio;
-
+import java.util.ArrayList;
 import java.time.LocalDate;
 
 public class Aluno extends BasePessoa{
     private int periodo;
     private Turma turma;
-    private RendimentoEscolar rendimentoEscolar;
+    private ArrayList<RendimentoEscolar> rendimentoEscolar;
     public int getPeriodo() {
         return periodo;
     }
@@ -18,24 +18,22 @@ public class Aluno extends BasePessoa{
     public void setTurma(Turma turma) {
         this.turma = turma;
     }
-    public RendimentoEscolar getRendimentoEscolar() {
+    public ArrayList<RendimentoEscolar> getRendimentoEscolar() {
         return rendimentoEscolar;
     }
-    public void setRendimentoEscolar(RendimentoEscolar rendimentoEscolar) {
+    public void setRendimentoEscolar(ArrayList<RendimentoEscolar>rendimentoEscolar) {
         this.rendimentoEscolar = rendimentoEscolar;
     }
     
     public Aluno() {
     }
-    
     public Aluno(int codigo, String nome, String senha, LocalDate dataNascimento, String nomeUsuario, int periodo,
             Turma turma, RendimentoEscolar rendimentoEscolar) {
         super(codigo, nome, senha, dataNascimento, nomeUsuario);
         this.periodo = periodo;
         this.turma = new Turma();
-        this.rendimentoEscolar = new RendimentoEscolar();
+        this.rendimentoEscolar = new ArrayList<RendimentoEscolar>();
     }
-
     @Override
     public String toString() {
         return "Aluno [codigo =" + codigo + "nome = "+ nome + "Senha = "+ senha + "Data de Nascimento =" + dataNascimento + "Nome de Usuário = " + nomeUsuario + "periodo=" + periodo + ", turma=" + turma + ", rendimentoEscolar=" + rendimentoEscolar + "]";

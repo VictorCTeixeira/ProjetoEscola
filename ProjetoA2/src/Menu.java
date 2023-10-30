@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 import poo.projeto.dominio.Aluno;
 import poo.projeto.dominio.Professor;
-import poo.projeto.dominio.Servico.AlunoServico;
-import poo.projeto.dominio.Servico.ProfessorServico;
+import poo.projeto.Servico.AlunoServico;
+import poo.projeto.Servico.ProfessorServico;
 
 public class Menu {
     
@@ -61,6 +61,8 @@ public class Menu {
 
         ProfessorServico prof = new ProfessorServico();
         ArrayList<Professor> lista = prof.Listar();
+
+        System.out.println("\n LISTA DE PROFESSORES! \n");
 
         for(Professor p1 : lista){
             System.out.println("Nome: " + p1.getNome() + " e Codigo " + p1.getCodigo());

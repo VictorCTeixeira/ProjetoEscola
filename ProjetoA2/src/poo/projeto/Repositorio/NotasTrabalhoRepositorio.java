@@ -1,7 +1,7 @@
-package poo.projeto.dominio.Repositorio;
+package poo.projeto.Repositorio;
 
 import poo.projeto.dominio.NotaTrabalho;
-import poo.projeto.dominio.FakeDB.NotasTrabalhoFakeDB;
+import poo.projeto.FakeDB.NotasTrabalhoFakeDB;
 
 public class NotasTrabalhoRepositorio extends BaseGenericaCRUD<NotasTrabalhoFakeDB, NotaTrabalho>{
 

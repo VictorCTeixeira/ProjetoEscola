@@ -1,4 +1,4 @@
-package poo.projeto.dominio.FakeDB;
+package poo.projeto.FakeDB;
 import poo.projeto.dominio.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -35,8 +35,6 @@ public class AlunoFakeDB extends BaseGenericaFakeDB<Aluno>{
        this.lista.add(new Aluno(23, "Everton Ribeiro", "ER0129381", LocalDate.of(1999, 7, 8), "Everton", 8, listaTurmas.get(7), null));
        this.lista.add(new Aluno(24, "Hemerson Vieira", "HV1928372", LocalDate.of(1997, 10, 6), "Hemerson", 8, listaTurmas.get(7), null));
     }
-
-
     public AlunoFakeDB() {
         super();
     }

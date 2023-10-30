@@ -1,4 +1,4 @@
-package poo.projeto.dominio.FakeDB;
+package poo.projeto.FakeDB;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import poo.projeto.dominio.*;

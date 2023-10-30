@@ -1,9 +1,9 @@
-package poo.projeto.dominio.Servico;
+package poo.projeto.Servico;
 
 import java.util.ArrayList;
 
 import poo.projeto.dominio.RendimentoEscolar;
-import poo.projeto.dominio.Repositorio.RendimentoEscolarRepositorio;
+import poo.projeto.Repositorio.RendimentoEscolarRepositorio;
 
 public class RendimentoEscolarServico extends BaseGenericaServico<RendimentoEscolarRepositorio, RendimentoEscolar> {
 
