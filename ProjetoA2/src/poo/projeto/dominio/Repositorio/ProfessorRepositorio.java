@@ -1,6 +1,5 @@
 package poo.projeto.dominio.Repositorio;
 
-import poo.projeto.dominio.Aluno;
 import poo.projeto.dominio.Professor;
 import poo.projeto.dominio.FakeDB.ProfessorFakeDB;
 
@@ -13,29 +12,40 @@ public class ProfessorRepositorio extends BaseGenericaCRUD<ProfessorFakeDB, Prof
 
     @Override
     public Professor Create(Professor instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Create'");
+        int tam = this.dataset.size() - 1;
+        int proxCodigo = this.dataset.get(tam).getCodigo();
+        proxCodigo++;
+        instancia.setCodigo(proxCodigo);
+        this.dataset.add(instancia);
+        return instancia;  
     }
 
     @Override
     public Professor Read(int codigo) {
-          for (Professor prof : this.dataset) {
+        for (Professor prof : this.dataset) {
             if (prof.getCodigo() == codigo)
-                prof.Imprimir();
+                prof.toString();
         }
         return null;    
     }
 
     @Override
     public Professor Update(Professor instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+        Professor prof = this.Read(instancia.getCodigo());
+        prof.setCargo(instancia.getCargo());
+        prof.setDataNascimento(instancia.getDataNascimento());
+        prof.setNome(instancia.getNome());
+        prof.setNomeUsuario(instancia.getNomeUsuario());
+        prof.setSenha(instancia.getSenha());
+        prof.setTurmas(instancia.getTurmas());
+        return prof;
     }
 
     @Override
     public Professor Delete(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        Professor cod = this.Read(codigo);
+        this.dataset.remove(cod);
+        return cod;
     }
     
 }

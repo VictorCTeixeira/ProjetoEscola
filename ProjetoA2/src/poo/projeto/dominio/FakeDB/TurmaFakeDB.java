@@ -1,66 +1,113 @@
 package poo.projeto.dominio.FakeDB;
+import poo.projeto.dominio.*;
 import java.util.ArrayList;
-import java.util.List;
 
-import poo.projeto.dominio.Turma;
-import poo.projeto.dominio.Disciplina;
-import poo.projeto.dominio.Professor;
+public class TurmaFakeDB extends BaseGenericaFakeDB<Turma>{ // 100 - 199 -> turma
+    private DisciplinaFakeDB disciplinas = new DisciplinaFakeDB();
+    private ArrayList<Disciplina> listaDisciplinas = disciplinas.getLista();
+    private ArrayList<Disciplina> listaDisciplinasTurma1 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma2 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma3 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma4 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma5 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma6 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma7 = new ArrayList<Disciplina>();
+    private ArrayList<Disciplina> listaDisciplinasTurma8 = new ArrayList<Disciplina>();
 
-public class TurmaFakeDB extends BaseGenericaFakeDB <Turma>{ // Turma -> 400 - 499
-  DisciplinaFakeDB disciplinas = new DisciplinaFakeDB();
-  ArrayList<Disciplina> listaDisciplina = disciplinas.getLista();
-  ProfessorFakeDB professor = new ProfessorFakeDB();
-  ArrayList<Professor> listaProfessor = professor.getLista();
-  List<Disciplina> disciplinaTurma1 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma2 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma3 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma4 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma5 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma6 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma7 = new ArrayList<Disciplina>(); 
-  List<Disciplina> disciplinaTurma8 = new ArrayList<Disciplina>();
+    private ProfessorFakeDB professores = new ProfessorFakeDB();
+    private ArrayList<Professor> listaProfessores = professores.getLista();
 
-  private void CarregarDisciplinas(){
-      this.disciplinaTurma1.add(listaDisciplina.get(0));
-      this.disciplinaTurma1.add(listaDisciplina.get(1));
-      this.disciplinaTurma1.add(listaDisciplina.get(2));
-      this.disciplinaTurma2.add(listaDisciplina.get(3));
-      this.disciplinaTurma2.add(listaDisciplina.get(4));
-      this.disciplinaTurma2.add(listaDisciplina.get(5));
-      this.disciplinaTurma3.add(listaDisciplina.get(6));
-      this.disciplinaTurma3.add(listaDisciplina.get(7));
-      this.disciplinaTurma3.add(listaDisciplina.get(8));
-      this.disciplinaTurma4.add(listaDisciplina.get(9));
-      this.disciplinaTurma4.add(listaDisciplina.get(10));
-      this.disciplinaTurma4.add(listaDisciplina.get(11));
-      this.disciplinaTurma5.add(listaDisciplina.get(12));
-      this.disciplinaTurma5.add(listaDisciplina.get(13));
-      this.disciplinaTurma5.add(listaDisciplina.get(14));
-      this.disciplinaTurma6.add(listaDisciplina.get(15));
-      this.disciplinaTurma6.add(listaDisciplina.get(16));
-      this.disciplinaTurma6.add(listaDisciplina.get(17));
-      this.disciplinaTurma7.add(listaDisciplina.get(18));
-      this.disciplinaTurma7.add(listaDisciplina.get(19));
-      this.disciplinaTurma7.add(listaDisciplina.get(20));
-      this.disciplinaTurma8.add(listaDisciplina.get(21));
-      this.disciplinaTurma8.add(listaDisciplina.get(23));
-    }
-    @Override
-    protected void CarregarDados() {
-      CarregarDisciplinas();
-      this.lista.add(new Turma(401, disciplinaTurma1, listaProfessor.get(1), 60)); // Luiz Martins -> Turma 1
-      this.lista.add(new Turma(402, disciplinaTurma2, listaProfessor.get(2), 56)); // Nicole Souza -> Turma 2
-      this.lista.add(new Turma(403, disciplinaTurma3, listaProfessor.get(1), 49)); // Luiz Martins -> Turma 3
-      this.lista.add(new Turma(404, disciplinaTurma4, listaProfessor.get(4), 58)); // Alberto Farias -> Turma 4
-      this.lista.add(new Turma(405, disciplinaTurma5, listaProfessor.get(3), 45)); // Gerivaldo Lopes -> Turma 5
-      this.lista.add(new Turma(406, disciplinaTurma6, listaProfessor.get(0), 38)); // André Ocampos -> Turma 6
-      this.lista.add(new Turma(407, disciplinaTurma7, listaProfessor.get(3), 35)); // Gerivaldo Lopes -> Turma 7
-      this.lista.add(new Turma(408, disciplinaTurma8, listaProfessor.get(1), 29)); // Luiz Martins -> Turma 8
-    }
-  
+    private AlunoFakeDB alunos = new AlunoFakeDB();
+    private ArrayList<Aluno> listaAlunos = alunos.getLista();
+    private ArrayList<Aluno> listaAlunosTurma1 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma2 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma3 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma4 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma5 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma6 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma7 = new ArrayList<Aluno>();
+    private ArrayList<Aluno> listaAlunosTurma8 = new ArrayList<Aluno>();
     
+    @Override
+    protected void CarregarDados(){
+        CarregarDisciplinas();
+        CarregarAlunos();
+        this.lista.add(new Turma(101, listaDisciplinasTurma1, listaProfessores.get(1), listaAlunosTurma1, 10));
+        this.lista.add(new Turma(102, listaDisciplinasTurma2, listaProfessores.get(0), listaAlunosTurma2, 15));
+        this.lista.add(new Turma(103, listaDisciplinasTurma3, listaProfessores.get(3), listaAlunosTurma3, 20));
+        this.lista.add(new Turma(104, listaDisciplinasTurma4, listaProfessores.get(2), listaAlunosTurma4, 15));
+        this.lista.add(new Turma(105, listaDisciplinasTurma5, listaProfessores.get(2), listaAlunosTurma5, 30));
+        this.lista.add(new Turma(106, listaDisciplinasTurma6, listaProfessores.get(3), listaAlunosTurma6, 45));
+        this.lista.add(new Turma(107, listaDisciplinasTurma7, listaProfessores.get(0), listaAlunosTurma7, 25));
+        this.lista.add(new Turma(108, listaDisciplinasTurma8, listaProfessores.get(0), listaAlunosTurma8, 15));
+    }
+    private void CarregarDisciplinas(){
+        this.listaDisciplinasTurma1.add(listaDisciplinas.get(8));
+        this.listaDisciplinasTurma1.add(listaDisciplinas.get(0)); 
+        this.listaDisciplinasTurma1.add(listaDisciplinas.get(6));
+        this.listaDisciplinasTurma1.add(listaDisciplinas.get(5));//Disciplinas da turma 1 = ingles, matematica, fisica e biologia
+        this.listaDisciplinasTurma2.add(listaDisciplinas.get(0));
+        this.listaDisciplinasTurma2.add(listaDisciplinas.get(5)); 
+        this.listaDisciplinasTurma2.add(listaDisciplinas.get(8));
+        this.listaDisciplinasTurma2.add(listaDisciplinas.get(9));// Disciplinas da turma 2 = matematica, biologia, ingles e espanhol
+        this.listaDisciplinasTurma3.add(listaDisciplinas.get(6));
+        this.listaDisciplinasTurma3.add(listaDisciplinas.get(7)); 
+        this.listaDisciplinasTurma3.add(listaDisciplinas.get(0));
+        this.listaDisciplinasTurma3.add(listaDisciplinas.get(9)); // Disciplinas da turma 3 = fisica, quimica, matematica e espanhol
+        this.listaDisciplinasTurma4.add(listaDisciplinas.get(10));
+        this.listaDisciplinasTurma4.add(listaDisciplinas.get(1)); 
+        this.listaDisciplinasTurma4.add(listaDisciplinas.get(0));
+        this.listaDisciplinasTurma4.add(listaDisciplinas.get(11));// Disciplinas da turma 4 = Filosofia, Português, Matemática e sociologia
+        this.listaDisciplinasTurma5.add(listaDisciplinas.get(4));
+        this.listaDisciplinasTurma5.add(listaDisciplinas.get(10)); 
+        this.listaDisciplinasTurma5.add(listaDisciplinas.get(5));
+        this.listaDisciplinasTurma5.add(listaDisciplinas.get(7)); // Disciplinas da turma 5 = História, Filosofia, Biologia e Química;
+        this.listaDisciplinasTurma6.add(listaDisciplinas.get(3));
+        this.listaDisciplinasTurma6.add(listaDisciplinas.get(4)); 
+        this.listaDisciplinasTurma6.add(listaDisciplinas.get(11));
+        this.listaDisciplinasTurma6.add(listaDisciplinas.get(10)); // Disciplinas da turma 6 = Geografia, História, Sociologia e Filosofia
+        this.listaDisciplinasTurma7.add(listaDisciplinas.get(2));
+        this.listaDisciplinasTurma7.add(listaDisciplinas.get(6)); 
+        this.listaDisciplinasTurma7.add(listaDisciplinas.get(5));
+        this.listaDisciplinasTurma7.add(listaDisciplinas.get(7));// Disciplinas da turma 7 = Ed fisica, Física, Biologia e Química
+        this.listaDisciplinasTurma8.add(listaDisciplinas.get(8));
+        this.listaDisciplinasTurma8.add(listaDisciplinas.get(9)); 
+        this.listaDisciplinasTurma8.add(listaDisciplinas.get(2));
+        this.listaDisciplinasTurma8.add(listaDisciplinas.get(4)); // Disciplinas da Turma 8 = Inglês, espanhol, Ed Física e História
+        
+        
+    }
+
+    private void CarregarAlunos(){
+        this.listaAlunosTurma1.add(listaAlunos.get(0));
+        this.listaAlunosTurma1.add(listaAlunos.get(1));
+        this.listaAlunosTurma1.add(listaAlunos.get(2));
+        this.listaAlunosTurma2.add(listaAlunos.get(3)); 
+        this.listaAlunosTurma2.add(listaAlunos.get(4));
+        this.listaAlunosTurma2.add(listaAlunos.get(5));
+        this.listaAlunosTurma3.add(listaAlunos.get(6));
+        this.listaAlunosTurma3.add(listaAlunos.get(7));
+        this.listaAlunosTurma3.add(listaAlunos.get(8));
+        this.listaAlunosTurma4.add(listaAlunos.get(9));
+        this.listaAlunosTurma4.add(listaAlunos.get(10));
+        this.listaAlunosTurma4.add(listaAlunos.get(11));
+        this.listaAlunosTurma5.add(listaAlunos.get(12));
+        this.listaAlunosTurma5.add(listaAlunos.get(13));
+        this.listaAlunosTurma5.add(listaAlunos.get(14));
+        this.listaAlunosTurma6.add(listaAlunos.get(15));
+        this.listaAlunosTurma6.add(listaAlunos.get(16));
+        this.listaAlunosTurma6.add(listaAlunos.get(17));
+        this.listaAlunosTurma7.add(listaAlunos.get(18));
+        this.listaAlunosTurma7.add(listaAlunos.get(19));
+        this.listaAlunosTurma7.add(listaAlunos.get(20));
+        this.listaAlunosTurma8.add(listaAlunos.get(21));
+        this.listaAlunosTurma8.add(listaAlunos.get(22));
+        this.listaAlunosTurma8.add(listaAlunos.get(23));
+
+    }
 
     public TurmaFakeDB(){
-      super();
+        super();
     }
+
 }

@@ -12,25 +12,35 @@ public class DisciplinaRepositorio extends BaseGenericaCRUD<DisciplinaFakeDB, Di
 
     @Override
     public Disciplina Create(Disciplina instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Create'");
+        int tam = this.dataset.size() - 1;
+        int proxCodigo = this.dataset.get(tam).getCodigo();
+        proxCodigo++;
+        instancia.setCodigo(proxCodigo);
+        this.dataset.add(instancia);
+        return instancia;    
     }
 
     @Override
     public Disciplina Read(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Read'");
+        for (Disciplina disciplina : this.dataset) {
+            if (disciplina.getCodigo() == codigo)
+                disciplina.toString();
+        }
+        return null;
     }
 
     @Override
     public Disciplina Update(Disciplina instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+        Disciplina disc = this.Read(instancia.getCodigo());
+        disc.setEmenta(instancia.getEmenta());
+        disc.setNome(instancia.getNome());
+        return disc;
     }
 
     @Override
     public Disciplina Delete(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        Disciplina cod = this.Read(codigo);
+        this.dataset.remove(cod);
+        return cod;  
     }
 }

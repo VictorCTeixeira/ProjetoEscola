@@ -15,10 +15,17 @@ public class Trabalho extends BaseIdentificador{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    public Trabalho() {
+    }
     public Trabalho(int codigo, Disciplina disciplina, String descricao) {
         super(codigo);
         this.disciplina = disciplina;
         this.descricao = descricao;
     }
+    @Override
+    public String toString() {
+        return "Trabalho [codigo = "+ codigo + "disciplina=" + disciplina + ", descricao=" + descricao + "]";
+    }
+    
     
 }

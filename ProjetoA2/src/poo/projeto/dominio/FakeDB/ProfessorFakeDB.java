@@ -1,20 +1,44 @@
 package poo.projeto.dominio.FakeDB;
+import java.util.ArrayList;
 import java.time.LocalDate;
+import poo.projeto.dominio.*;
 
-import poo.projeto.dominio.Professor;
+public class ProfessorFakeDB extends BaseGenericaFakeDB<Professor>{ //200 - 299 -> professor
+    private TurmaFakeDB t1 = new TurmaFakeDB();
+    private ArrayList<Turma> listaTurmas = t1.getLista();
+    private ArrayList<Turma> listaTurmaProfessor1 = new ArrayList<Turma>();
+    private ArrayList<Turma> listaTurmaProfessor2 = new ArrayList<Turma>();
+    private ArrayList<Turma> listaTurmaProfessor3 = new ArrayList<Turma>();
+    private ArrayList<Turma> listaTurmaProfessor4 = new ArrayList<Turma>();
 
-public class ProfessorFakeDB extends BaseGenericaFakeDB<Professor> { // Professor -: 100 - 199
+
 
     @Override
     protected void CarregarDados() {
-        this.lista.add(new Professor(105, "Andre Ocampos", "78912", LocalDate.of(1982, 05, 2), "Andre", "Professor"));
-        this.lista.add(new Professor(110, "Luiz Martins", "123423", LocalDate.of(1988, 01, 29), "Luiz", "Professor"));
-        this.lista.add(new Professor(115, "Nicole Souza", "67456", LocalDate.of(1995, 12, 30), "Nicole", "Professor"));
-        this.lista.add(new Professor(120, "Gerivaldo Lopes", "0000", LocalDate.of(1968,07, 16), "Gerivaldo", "Professor"));
-        this.lista.add(new Professor(125, "Alberto Farias", "098012", LocalDate.of(1970, 10, 10), "Alberto", "Professor"));
-        
+        CarregarTurmas();
+        this.lista.add(new Professor(201, "Oswaldo Marques", "OM123456", LocalDate.of(1996, 05, 20), "Oswaldo", "Professor", this.listaTurmaProfessor1));
+        this.lista.add(new Professor(202, "Marcos do Val", "MV987654", LocalDate.of(1992, 03, 25), "Marcos", "Professor", this.listaTurmaProfessor2));
+        this.lista.add(new Professor(203, "Beatriz Schimidt", "BM856531", LocalDate.of(1999, 04, 28), "Beatriz", "Professor", this.listaTurmaProfessor3));
+        this.lista.add(new Professor(204, "Márcia Souza", "MS228134", LocalDate.of(1985, 8, 13), "Márcia", "Professor", this.listaTurmaProfessor4));    
     }
+
+    private void CarregarTurmas(){
+
+        this.listaTurmaProfessor1.add(listaTurmas.get(1)); // 1, 6 e 7
+        this.listaTurmaProfessor1.add(listaTurmas.get(6));
+        this.listaTurmaProfessor1.add(listaTurmas.get(7));
+        
+        this.listaTurmaProfessor2.add(listaTurmas.get(0)); // 0
+
+        this.listaTurmaProfessor3.add(listaTurmas.get(3)); // 3 e 4
+        this.listaTurmaProfessor3.add(listaTurmas.get(4));
+
+        this.listaTurmaProfessor4.add(listaTurmas.get(5));
+        this.listaTurmaProfessor4.add(listaTurmas.get(2)); // 5 e 2
+    }
+
     public ProfessorFakeDB(){
         super();
     }
+    
 }

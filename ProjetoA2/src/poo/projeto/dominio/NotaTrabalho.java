@@ -1,15 +1,8 @@
 package poo.projeto.dominio;
 
-public class NotaTrabalho extends BaseIdentificador{
-    private Aluno aluno;
+public class NotaTrabalho extends BaseObjetoAluno{
     private Trabalho trabalho;
     private double nota;
-    public Aluno getAluno() {
-        return aluno;
-    }
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
     public Trabalho getTrabalho() {
         return trabalho;
     }
@@ -22,11 +15,17 @@ public class NotaTrabalho extends BaseIdentificador{
     public void setNota(double nota) {
         this.nota = nota;
     }
+    public NotaTrabalho() {
+    }
     public NotaTrabalho(int codigo, Aluno aluno, Trabalho trabalho, double nota) {
-        super(codigo);
-        this.aluno = aluno;
+        super(codigo, aluno);
         this.trabalho = trabalho;
         this.nota = nota;
     }
+    @Override
+    public String toString() {
+        return "NotaTrabalho [codigo = "+ codigo + "aluno = "+ aluno + "trabalho=" + trabalho + ", nota=" + nota + "]";
+    }
+    
     
 }

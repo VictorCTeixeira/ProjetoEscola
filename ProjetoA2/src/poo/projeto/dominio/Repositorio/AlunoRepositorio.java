@@ -12,29 +12,40 @@ public class AlunoRepositorio extends BaseGenericaCRUD<AlunoFakeDB, Aluno>{
 
     @Override
     public Aluno Create(Aluno instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Create'");
+        int tam = this.dataset.size() - 1;
+        int proxCodigo = this.dataset.get(tam).getCodigo();
+        proxCodigo++;
+        instancia.setCodigo(proxCodigo);
+        this.dataset.add(instancia);
+        return instancia;
     }
 
     @Override
     public Aluno Read(int codigo) {
         for (Aluno aluno : this.dataset) {
             if (aluno.getCodigo() == codigo)
-                aluno.Imprimir();
+                aluno.ListarTurmaAluno();
         }
         return null;    
     }
 
     @Override
     public Aluno Update(Aluno instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+        Aluno cod = this.Read(instancia.getCodigo());
+        cod.setDataNascimento(instancia.getDataNascimento());
+        cod.setNome(instancia.getNome());
+        cod.setNomeUsuario(instancia.getNomeUsuario());
+        cod.setPeriodo(instancia.getPeriodo());
+        cod.setRendimentoEscolar(instancia.getRendimentoEscolar());
+        cod.setSenha(instancia.getSenha());
+        cod.setTurma(instancia.getTurma());
+        return cod;
     }
 
     @Override
     public Aluno Delete(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        Aluno cod = this.Read(codigo);
+        this.dataset.remove(cod);
+        return cod;
     }
-    
 }

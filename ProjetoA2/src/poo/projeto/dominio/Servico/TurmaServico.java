@@ -13,32 +13,27 @@ public class TurmaServico extends BaseGenericaServico<TurmaRepositorio, Turma>{
 
     @Override
     public Turma Inserir(Turma registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Inserir'");
+        return this.repo.Create(registro);
     }
 
     @Override
     public Turma Obter(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Obter'");
+        return this.repo.Read(codigo);
     }
 
     @Override
     public ArrayList<Turma> Listar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Listar'");
+        return this.repo.ReadAll();     
     }
 
     @Override
     public Turma Atualizar(Turma registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Atualizar'");
+        return this.repo.Update(registro);
     }
 
     @Override
     public Turma Excluir(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Excluir'");
+        return this.repo.Delete(codigo);
     }
 
 }

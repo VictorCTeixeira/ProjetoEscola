@@ -12,26 +12,36 @@ public class TrabalhoRepositorio extends BaseGenericaCRUD<TrabalhoFakeDB, Trabal
 
     @Override
     public Trabalho Create(Trabalho instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Create'");
+        int tam = this.dataset.size() - 1;
+        int proxCodigo = this.dataset.get(tam).getCodigo();
+        proxCodigo++;
+        instancia.setCodigo(proxCodigo);
+        this.dataset.add(instancia);
+        return instancia;
     }
 
     @Override
     public Trabalho Read(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Read'");
+          for (Trabalho trab : this.dataset) {
+            if (trab.getCodigo() == codigo)
+                trab.toString();
+        }
+        return null;  
     }
 
     @Override
     public Trabalho Update(Trabalho instancia) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+        Trabalho trab = this.Read(instancia.getCodigo());
+        trab.setDescricao(instancia.getDescricao());
+        trab.setDisciplina(instancia.getDisciplina());
+        return trab;
     }
 
     @Override
     public Trabalho Delete(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        Trabalho cod = this.Read(codigo);
+        this.dataset.remove(cod);
+        return cod;
     }
     
 }

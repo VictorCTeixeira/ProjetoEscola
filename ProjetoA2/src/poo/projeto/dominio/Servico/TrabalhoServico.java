@@ -13,32 +13,27 @@ public class TrabalhoServico extends BaseGenericaServico<TrabalhoRepositorio, Tr
 
     @Override
     public Trabalho Inserir(Trabalho registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Inserir'");
+        return this.repo.Create(registro);
     }
 
     @Override
     public Trabalho Obter(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Obter'");
+        return this.repo.Read(codigo);
     }
 
     @Override
     public ArrayList<Trabalho> Listar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Listar'");
+        return this.repo.ReadAll();     
     }
 
     @Override
     public Trabalho Atualizar(Trabalho registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Atualizar'");
+        return this.repo.Update(registro);
     }
 
     @Override
     public Trabalho Excluir(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Excluir'");
+        return this.repo.Delete(codigo);
     }
     
 }

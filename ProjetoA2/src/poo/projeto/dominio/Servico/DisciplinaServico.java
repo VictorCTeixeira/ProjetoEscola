@@ -13,32 +13,27 @@ public class DisciplinaServico extends BaseGenericaServico<DisciplinaRepositorio
 
     @Override
     public Disciplina Inserir(Disciplina registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Inserir'");
+        return this.repo.Create(registro);
     }
 
     @Override
     public Disciplina Obter(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Obter'");
+        return this.repo.Read(codigo);
     }
 
     @Override
     public ArrayList<Disciplina> Listar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Listar'");
+        return this.repo.ReadAll();
     }
 
     @Override
     public Disciplina Atualizar(Disciplina registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Atualizar'");
+        return this.repo.Update(registro);
     }
 
     @Override
     public Disciplina Excluir(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Excluir'");
+        return this.repo.Delete(codigo);
     }
     
 }

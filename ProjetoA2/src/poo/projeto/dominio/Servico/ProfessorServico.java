@@ -13,8 +13,7 @@ public class ProfessorServico extends BaseGenericaServico<ProfessorRepositorio, 
 
     @Override
     public Professor Inserir(Professor registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Inserir'");
+        return this.repo.Create(registro);
     }
 
     @Override
@@ -29,14 +28,12 @@ public class ProfessorServico extends BaseGenericaServico<ProfessorRepositorio, 
 
     @Override
     public Professor Atualizar(Professor registro) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Atualizar'");
+        return this.repo.Update(registro);
     }
 
     @Override
     public Professor Excluir(int codigo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Excluir'");
+        return this.repo.Delete(codigo);
     }
     
 }
